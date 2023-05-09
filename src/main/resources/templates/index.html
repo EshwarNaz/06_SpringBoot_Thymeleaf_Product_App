@@ -17,16 +17,26 @@
 		<form th:action="@{/product}" th:object="${product}" method="post">
 			<table>
 				<tr>
+
+					<input type="hidden" th:field=*{Id}>
 					<td>Name :</td>
 					<td><input type="text" th:field="*{Name}"></td>
+					<td th:if="${#fields.hasErrors('Name')}" th:errors="*{Name}"
+						class="text-danger"></td>
 				</tr>
 				<tr>
 					<td>Price:</td>
 					<td><input type="number" th:field="*{Price}"></td>
+					<td th:if="${#fields.hasErrors('Price')}" th:errors="*{Price}"
+						class="text-danger"></td>
+
 				</tr>
 				<tr>
 					<td>Quantity:</td>
 					<td><input type="number" th:field="*{Quantity}"></td>
+					<td th:if="${#fields.hasErrors('Quantity')}"
+						th:errors="*{Quantity}" class="text-danger"></td>
+
 				</tr>
 				<tr>
 					<td><a href="/" class="btn btn-dark">Reset</a></td>

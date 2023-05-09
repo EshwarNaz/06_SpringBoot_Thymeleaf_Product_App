@@ -40,11 +40,15 @@
 					<td th:text="${product.Name}"></td>
 					<td th:text="${product.Price}"></td>
 					<td th:text="${product.Quantity}"></td>
-					<td><a th:href="@{/delete?(Id=${product.Id})}" onclick="return dleteProduct()"
-						class="btn btn-danger">Delete</a></td>
+					<td><a th:href="@{/edit?(Id=${product.Id})}"
+						class="btn btn-info">Edit</a> <a
+						th:href="@{/delete?(Id=${product.Id})}"
+						onclick="return dleteProduct()" class="btn btn-danger">Delete</a>
+					</td>
 				</tr>
 				<tr>
-				<td th:if="${listOfProducts==null or listOfProducts.isEmpty()}" colspan="5" class="text-center">No records found</td>			
+					<td th:if="${listOfProducts==null or listOfProducts.isEmpty()}"
+						colspan="5" class="text-center">No records found</td>
 				</tr>
 			</tbody>
 
